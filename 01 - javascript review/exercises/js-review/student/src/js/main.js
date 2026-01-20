@@ -118,9 +118,15 @@ list.innerHTML = renderTaskList(tasks)
 // - Create a <p> element
 // - Set its textContent
 // - Append it to the output element
-
+function addMessage(message) {
+    const p = document.createElement("p");
+    
+    
+    p.textContent = message;
+    output.appendChild(p);
+}
 // TODO: Test the addMessage function
-
+addMessage("This is a test message.");
 // --------------------------------------------------
 // STEP 7: Events – connect UI to behavior
 // --------------------------------------------------
@@ -135,7 +141,12 @@ list.innerHTML = renderTaskList(tasks)
 // - Clear both output and todo list containers
 
 // TODO: Add click listeners for btnRun and btnClear
-
+function runDemo() {
+    output.innerHTML = "";
+    addMessage("Run demo...");
+    addMessage("Rendering task list...");
+    list.innerHTML = renderTaskList(tasks);
+}
 // --------------------------------------------------
 // STEP 8: Mini extension – Adding tasks
 // --------------------------------------------------
