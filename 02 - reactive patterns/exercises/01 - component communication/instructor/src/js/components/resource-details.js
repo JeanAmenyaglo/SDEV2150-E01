@@ -25,6 +25,7 @@ template.innerHTML = `
 
 class ResourceDetails extends HTMLElement {
   // TODO: Create private field for resource data
+  #resource = null;
 
   constructor() {
     super();
@@ -36,6 +37,10 @@ class ResourceDetails extends HTMLElement {
   }
 
   // TODO: Implement setter for resource data, remember to render
+  set resource(data) {
+    this.#resource = data;
+    this.render()
+  }
 
   render() {
     // TODO: Render resource details if available
